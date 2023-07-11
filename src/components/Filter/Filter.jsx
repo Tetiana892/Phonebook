@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import { filterContact } from 'redux/contacts/contacts-slice';
 import { FilterContainer, Input, Text } from './Filter.styled';
-import { changeFilter } from 'redux/contactsSlice.js';
 
 const Filter = () => {
   const dispatch = useDispatch();
 
-  const handleFilterChange = e => dispatch(changeFilter(e.target.value));
+  const handleFilterChange = e => dispatch(filterContact(e.target.value));
   return (
     <FilterContainer>
       <Text>Find contacts by name</Text>

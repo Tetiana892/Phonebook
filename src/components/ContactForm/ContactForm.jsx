@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { nanoid } from 'nanoid';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   FormContainer,
   InputContainer,
@@ -7,39 +7,38 @@ import {
   Input,
   Button,
 } from './ContactForm.styled';
-import {
-  useGetContactsQuery,
-  useCreateContactMutation,
-} from 'redux/contactsApi';
-import { toast } from 'react-toastify';
+import { addContactThunk } from 'redux/contacts/contacts-requests';
+import { getContacts } from 'redux/contacts/contacts-selectors';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 export default function ContactForm() {
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setNumber] = useState('');
 
-  const { data: contacts } = useGetContactsQuery();
-  const [createContact] = useCreateContactMutation();
+  const contacts = useSelector(getContacts);
+  const dispatch = useDispatch();
 
   const changeName = e => setName(e.target.value);
-  const changeNumber = e => setPhone(e.target.value);
+  const changeNumber = e => setNumber(e.target.value);
 
   const handleSubmit = e => {
     e.preventDefault();
+
     const newContact = {
       name,
-      phone,
-      id: nanoid(),
+      number,
     };
+
     contacts.find(contact => contact.name.toLowerCase() === name.toLowerCase())
-      ? toast.warn(`${name} : ${phone} is already in contacts`)
-      : createContact(newContact);
+      ? Notify.warning(`${name} : ${number} is already in contacts`)
+      : dispatch(addContactThunk(newContact));
 
     reset();
   };
 
   const reset = () => {
     setName('');
-    setPhone('');
+    setNumber('');
   };
 
   return (
@@ -68,7 +67,7 @@ export default function ContactForm() {
             phonePattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
-            value={phone}
+            value={number}
             onChange={changeNumber}
             placeholder="Enter phone number"
             autoComplete="off"

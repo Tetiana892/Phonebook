@@ -27,3 +27,50 @@ export const register = createAsyncThunk(
     }
   }
 );
+
+export const logIn = createAsyncThunk(
+  'authorization/login',
+  async (credentials, thunkAPI) => {
+    try {
+      const { data } = await axios.post('users/login', credentials);
+      token.set(data.token);
+      return data;
+    } catch (error) {
+      Notify.failure(`Incorrectly entered data`);
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);
+
+export const logOut = createAsyncThunk(
+  'authorization/logout',
+  async (_, thunkAPI) => {
+    try {
+      await axios.post('users/logout');
+      token.unset();
+    } catch (error) {
+      console.log(error);
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);
+export const getCurrentUser = createAsyncThunk(
+  'authorization/refresh',
+  async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+
+    const persistedToken = state.auth.token;
+
+    if (persistedToken === null) {
+      return thunkAPI.rejectWithValue();
+    }
+
+    token.set(persistedToken);
+    try {
+      const { data } = await axios.get('users/current');
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);
