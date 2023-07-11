@@ -3,7 +3,7 @@ import {
   getContactsThunk,
   addContactThunk,
   deleteContactThunk,
-} from './contacts-requests.js';
+} from './contacts-requests';
 
 const initialState = {
   items: [],
@@ -15,6 +15,7 @@ const initialState = {
 const contactsSlice = createSlice({
   name: 'contacts',
   initialState,
+
   reducers: {
     filterContact: (state, action) => {
       state.filter = action.payload;
@@ -48,6 +49,7 @@ const contactsSlice = createSlice({
       state.isLoading = false;
       state.error = action.payload;
     },
+
     [deleteContactThunk.fulfilled]: state => {
       state.isLoading = false;
       state.error = null;
@@ -63,5 +65,5 @@ const contactsSlice = createSlice({
   },
 });
 
-export const { filterContact } = contactsSlice.action;
+export const { filterContact } = contactsSlice.actions;
 export const contactsSliceReducer = contactsSlice.reducer;

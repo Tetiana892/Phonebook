@@ -1,9 +1,12 @@
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContactsThunk } from 'redux/contacts/contacts-requests';
-import { getContacts, getFilter } from 'redux/contacts/contacts-selectors';
-import ContactItem from 'components/ContactItem/ContactItem';
+import { getContactsThunk } from '../../redux/contacts/contacts-requests';
+import {
+  getContacts,
+  getFilter,
+} from '../../redux/contacts/contacts-selectors';
+import ContactItem from '../../components/ContactItem/ContactItem';
 import { List, Error } from './ContactList.styled';
 
 export default function ContactList() {

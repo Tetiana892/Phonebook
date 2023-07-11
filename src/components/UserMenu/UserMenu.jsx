@@ -2,9 +2,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   getUserEmail,
   getUserName,
-} from 'redux/authorization/authorization-selectors';
+} from '../../redux/autorization/autorization-selector';
 import { useNavigate } from 'react-router-dom';
-import { logOut } from 'redux/authorization/authorization-requests';
+import { logOut } from '../../redux/autorization/autorization-requests';
 import { Container, UserInfoTitle, Button } from './UserMenu.styled';
 
 export default function UserMenu() {

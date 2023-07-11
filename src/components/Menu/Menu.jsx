@@ -1,8 +1,8 @@
-import AuthorizationMenu from './components/AutorizationMenu/AutorizationMenu';
+import AuthorizationMenu from '../../components/AutorizationMenu/AutorizationMenu';
 import { useSelector } from 'react-redux';
-import { getIsLoggedIn } from 'redux/authorization/authorization-selectors';
+import { getIsLoggedIn } from '../../redux/autorization/autorization-selector';
 import { Container, Nav, MenuLink } from './Menu.styled';
-import UserMenu from 'components/UserMenu/UserMenu';
+import UserMenu from '../../components/UserMenu/UserMenu';
 
 export default function Menu() {
   const isLoggedIn = useSelector(getIsLoggedIn);

@@ -7,8 +7,8 @@ import {
   Input,
   Button,
 } from './ContactForm.styled';
-import { addContactThunk } from 'redux/contacts/contacts-requests';
-import { getContacts } from 'redux/contacts/contacts-selectors';
+import { addContactThunk } from '../../redux/contacts/contacts-requests';
+import { getContacts } from '../../redux/contacts/contacts-selectors';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 export default function ContactForm() {

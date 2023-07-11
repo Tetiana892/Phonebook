@@ -1,4 +1,4 @@
-import { Container, Link } from './AutorizationMenu.styled.jsx';
+import { Container, Link } from './AutorizationMenu.styled';
 
 export default function AuthorizationMenu() {
   return (

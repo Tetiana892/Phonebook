@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { deleteContactThunk } from 'redux/contacts/contacts-requests';
+import { deleteContactThunk } from '../../redux/contacts/contacts-requests';
 import { Item, ItemContainer, Button } from './ContactItem.styled';
 import PropTypes from 'prop-types';
 
