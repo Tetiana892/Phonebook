@@ -1,6 +1,8 @@
 import { useSelector } from 'react-redux';
-import { getIsLoggedIn } from 'redux/autorization/autorization-selector';
-import { Container, Title, Text, Link } from './HomePage.styled';
+import { getIsLoggedIn } from 'redux/authorization/authorization-selector';
+import { Container, Title, Text, Link, IconBox } from './HomePage.styled';
+import { BsPhoneVibrate, BsPen, BsPeople } from 'react-icons/bs';
+import { Footer } from '../../components/Footer/Footer';
 
 export default function HomePage() {
   const isLoggedId = useSelector(getIsLoggedIn);
@@ -20,6 +22,10 @@ export default function HomePage() {
             </Text>
           </>
         )}
+        <IconBox>
+          <BsPhoneVibrate /> <BsPen /> <BsPeople />
+        </IconBox>
+        <Footer />
       </Container>
     </>
   );

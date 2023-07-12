@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { getIsLoggedIn } from '../../redux/autorization/autorization-selector';
+import { getIsLoggedIn } from '../../redux/authorization/authorization-selector';
 import {
   Container,
   Link,

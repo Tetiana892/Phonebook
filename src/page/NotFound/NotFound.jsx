@@ -1,12 +1,19 @@
-import styled from '@emotion/styled';
-const Title = styled.p`
-  padding-top: 40px;
-  text-align: center;
-  color: #42362b;
-  font-size: 30px;
-  font-weight: 500;
-`;
+import Cat from '../../components/images/cat.png';
+import { ContainerError } from './NotFound.styled';
 
-export default function NotFound() {
-  return <Title>Сторінку не знайдено ¯\_(ツ)_/¯</Title>;
+export default function NotFound({ error }) {
+  return (
+    <ContainerError>
+      <p style={{ textAlign: 'center' }}>
+        Oops... Something went wrong. {error} Try again later. 🙄
+      </p>
+      <img
+        src={Cat}
+        alt="Cat"
+        style={{
+          width: '200px',
+        }}
+      />
+    </ContainerError>
+  );
 }

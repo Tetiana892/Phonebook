@@ -1,18 +1,16 @@
 import { Dna } from 'react-loader-spinner';
-// import { LoaderContainer } from './Loader.styled';
-
+import { Container } from './Loader.styled';
 export default function Loader() {
   return (
-    <div>
+    <Container>
       <Dna
-        color="#42362b"
         visible={true}
-        height="80"
-        width="80"
+        height="200"
+        width="200"
         ariaLabel="dna-loading"
         wrapperStyle={{}}
         wrapperClass="dna-wrapper"
       />
-    </div>
+    </Container>
   );
 }

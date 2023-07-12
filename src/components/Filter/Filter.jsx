@@ -1,9 +1,9 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { filterContact } from '../../redux/contacts/contacts-slice';
 import { FilterContainer, Input, Text } from './Filter.styled';
 
-const Filter = () => {
+export default function Filter() {
   const dispatch = useDispatch();
 
   const handleFilterChange = e => dispatch(filterContact(e.target.value));
@@ -18,10 +18,8 @@ const Filter = () => {
       />
     </FilterContainer>
   );
-};
+}
 
-Filter.propTypes = {
-  onChange: PropTypes.func,
-};
-
-export default Filter;
+// Filter.propTypes = {
+//   onChange: PropTypes.func,
+// };

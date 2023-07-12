@@ -1,10 +1,14 @@
-import { Container, Link } from './AutorizationMenu.styled';
+import { Container, Link, Logo } from './AutorizationMenu.styled';
+import iconLogo from '../images/iconsTelephone-64.png';
 
 export default function AuthorizationMenu() {
   return (
-    <Container>
-      <Link to="/register">Registration</Link>
-      <Link to="/login">Login in</Link>
-    </Container>
+    <>
+      <Logo src={iconLogo} alt="Logo" width="40" />
+      <Container>
+        <Link to="/register">Registration</Link>
+        <Link to="/login">Login in</Link>
+      </Container>
+    </>
   );
 }

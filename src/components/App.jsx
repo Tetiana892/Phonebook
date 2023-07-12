@@ -1,7 +1,7 @@
 import { lazy, Suspense, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
-import { getCurrentUser } from './../redux/autorization/autorization-requests';
+import { getCurrentUser } from '../redux/authorization/authorization-requests';
 
 import NotFound from '../page/NotFound/NotFound';
 import Layout from './Layout/Layout';

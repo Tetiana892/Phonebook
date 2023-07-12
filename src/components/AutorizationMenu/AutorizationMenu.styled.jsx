@@ -5,7 +5,7 @@ export const Container = styled.div``;
 
 export const Link = styled(NavLink)`
   text-decoration: none;
-  padding: 0 14px;
+  padding: 0 20px;
   font-size: 16px;
   font-weight: 500;
   color: #fff;
@@ -35,4 +35,8 @@ export const Link = styled(NavLink)`
         0px 1px 10px 0px rgba(0, 0, 0, 0.12);
     }
   }
+`;
+export const Logo = styled.img`
+  padding: 0 20 px;
+  margin-left: 800px;
 `;

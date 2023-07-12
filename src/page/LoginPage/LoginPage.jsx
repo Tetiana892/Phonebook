@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { logIn } from 'redux/autorization/autorization-requests';
+import { logIn } from 'redux/authorization/authorization-requests';
 import {
   Container,
   Form,
@@ -9,12 +9,16 @@ import {
   LableInfo,
   Input,
   FormButton,
+  BtnVisiblePassword,
+  InputGroup,
 } from '../RegistrationPage/RegistrationPage.styled';
+import { BsEye, BsEyeSlash } from 'react-icons/bs';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
+  const [passwordVisible, setPasswordVisible] = useState(false);
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
@@ -30,7 +34,7 @@ export default function LoginPage() {
     e.preventDefault();
     dispatch(logIn({ email, password }));
   };
-
+  const togglePasswordVisible = () => setPasswordVisible(!passwordVisible);
   return (
     <Container>
       <Form onSubmit={handleSubmit}>
@@ -45,24 +49,33 @@ export default function LoginPage() {
             required
           />
         </Label>
-        <Label>
-          <LableText>
-            Enter your password
-            <LableInfo>
-              (minimum 7 characters, you entered {password.length})
-            </LableInfo>
-          </LableText>
-          <Input
-            type="password"
-            name="password"
-            value={password}
-            autoComplete="off"
-            required
-            pattern="(?=.*\d).{7,}"
-            onChange={handleChange}
-            title="The password must contain at least 7 characters, numbers or lowercase letters of the English alphabet"
-          />
-        </Label>
+        <InputGroup>
+          <Label>
+            <LableText>
+              Enter your password
+              <LableInfo>
+                (minimum 7 characters, you entered {password.length})
+              </LableInfo>
+            </LableText>
+            <Input
+              type={passwordVisible ? 'text' : 'password'}
+              name="password"
+              value={password}
+              autoComplete="off"
+              required
+              pattern="(?=.*\d).{7,}"
+              onChange={handleChange}
+              title="The password must contain at least 7 characters, numbers or lowercase letters of the English alphabet"
+            />
+            <BtnVisiblePassword
+              type="button"
+              onClick={togglePasswordVisible}
+              data-shown={passwordVisible}
+            >
+              {passwordVisible ? <BsEye /> : <BsEyeSlash />}
+            </BtnVisiblePassword>
+          </Label>
+        </InputGroup>
         <FormButton type="submit">Log in</FormButton>
       </Form>
     </Container>

@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
+import { addContactThunk } from '../../redux/contacts/contacts-requests';
+import { getContacts } from '../../redux/contacts/contacts-selectors';
+
 import {
   FormContainer,
   InputContainer,
@@ -7,8 +11,7 @@ import {
   Input,
   Button,
 } from './ContactForm.styled';
-import { addContactThunk } from '../../redux/contacts/contacts-requests';
-import { getContacts } from '../../redux/contacts/contacts-selectors';
+
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 export default function ContactForm() {
@@ -21,7 +24,7 @@ export default function ContactForm() {
   const changeName = e => setName(e.target.value);
   const changeNumber = e => setNumber(e.target.value);
 
-  const handleSubmit = e => {
+  const handlerSubmit = e => {
     e.preventDefault();
 
     const newContact = {
@@ -42,7 +45,7 @@ export default function ContactForm() {
   };
 
   return (
-    <FormContainer onSubmit={handleSubmit}>
+    <FormContainer onSubmit={handlerSubmit}>
       <InputContainer>
         <LabelInput>
           Name

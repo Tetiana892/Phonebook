@@ -16,7 +16,7 @@ export const MenuLink = styled(NavLink)`
   font-weight: 500;
   color: #fff;
   position: relative;
-  z-index: 20;
+  z-index: 10;
 
   transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover,
@@ -31,9 +31,9 @@ export const MenuLink = styled(NavLink)`
       display: block;
       z-index: -1;
       width: 100%;
-      height: 55px;
+      height: 60px;
       background-color: #42362b;
-      border-radius: 2px;
+      border-radius: 10px;
       left: 0;
       bottom: -26px;
       box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),

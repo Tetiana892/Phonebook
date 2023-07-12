@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContactsThunk } from '../../redux/contacts/contacts-requests';
@@ -26,18 +26,13 @@ export default function ContactList() {
   };
 
   const contactsList = filterList();
+
   return (
     <List>
       {contactsList.length > 0 ? (
         contactsList.map(({ id, name, number }) => {
           return (
-            <ContactItem
-              key={id}
-              id={id}
-              name={name}
-              number={number}
-              contactId={id}
-            />
+            <ContactItem key={id} name={name} number={number} contactId={id} />
           );
         })
       ) : (
@@ -49,13 +44,13 @@ export default function ContactList() {
   );
 }
 
-ContactList.propTypes = {
-  contacts: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
-    })
-  ),
-  deleteContact: PropTypes.func,
-};
+// ContactList.propTypes = {
+//   contacts: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       id: PropTypes.string.isRequired,
+//       name: PropTypes.string.isRequired,
+//       number: PropTypes.string.isRequired,
+//     })
+//   ),
+//   deleteContact: PropTypes.func,
+// };
