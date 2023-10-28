@@ -1,5 +1,7 @@
 # My contact book
 
+<div align="center">
+
 <img src="./assets/Screenshot_1.jpg" alt="Home page">
 
 Phonebook - is an application that allows you to maintain an online phone book.
@@ -38,8 +40,6 @@ To get started with our Drive Ukraine Now, follow these steps:
 
 To use the application, please follow the link
 [Phonebook App](https://tetiana892.github.io/Phonebook/).
-
-<div align="center">
 
 <b>Technologies and tools used in development:</b></br>
 ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
