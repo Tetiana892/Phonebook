@@ -1,29 +1,59 @@
-Admission criteria
-Use this React project template as a starting point for your application.
+# My contact book
 
-The goit-react-hw-08-phonebook repository has been created.
-When turning in homework, there are links to: the source files and working pages of each project on `GitHub Pages'.
-There are no errors or warnings in the console when running the job code
-For each component has a separate folder with a React component file and styles file
-For the components described propTypes
-Contact Book
-Add to the Contact Book application the ability to register, login, and user updates, and work with a private collection of contacts.
+<img src="./assets/Screenshot_1.jpg" alt="Home page">
 
-Backend.
-There is a ready-made backend for this task. Check out the documentation. It supports all necessary operations on the contact collection, as well as registering, logging in and user update with JWT. Use it instead of your backend created with the service mockapi.io.
+Phonebook - is an application that allows you to maintain an online phone book.
+To enter the application, user registration is required.
 
-Routing
-Add routing with the React Router library. The application should have several pages:
+<img src ="./assets/Screenshot_2.jpg" alt="Register page">
 
-/register - public route to register a new user with a form
-/login - public login route of an existing user with a form
-/contacts - a private route for your contact list
-Add a navigation component Navigation with links to navigate routes.
+After registration, you can add and remove contacts. There is also a system for
+searching for contacts in already added ones.
 
-User menu
-Create a component UserMenu, that displays the user's email and a logout button. Here's what its markup might look like.
+<img src ="./assets/Screenshot_3.jpg" alt="Contact book page">
 
-<div>
-  <p>mango@mail.com</p>
-  <button>Logout</button>
-</div>
+Backend. There is a ready-made backend for this task. Backend created with the
+service mockapi.io.
+
+Routing routing with the React Router library. The application have several
+pages:
+
+/register - public route to register a new user with a form /login - public
+login route of an existing user with a form /contacts - a private route for your
+contact list Add a navigation component Navigation with links to navigate
+routes.
+
+User menu a component UserMenu, that displays the user's email and a logout
+button.
+
+## Getting Started
+
+To get started with our Drive Ukraine Now, follow these steps:
+
+1. Clone this repository to your local machine.
+2. Install the necessary dependencies by running `npm install`.
+3. Start the application with `npm start`.
+
+## Link to the app
+
+To use the application, please follow the link
+[Phonebook App](https://tetiana892.github.io/Phonebook/).
+
+<div align="center">
+
+<b>Technologies and tools used in development:</b></br>
+![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)</br>
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![Babel](https://img.shields.io/badge/Babel-F9DC3e?style=for-the-badge&logo=babel&logoColor=black)![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)</br>
+
+## Contact
+
+If you have any questions, suggestions, or need assistance, feel free to contact
+our support team at tatina892@gmail.com.
+
+<div align="center"><b>Thank you very much for choosing  application!</b>
+</br></br><div>
